@@ -192,19 +192,14 @@
 <p>免费部署方式——github </p>
 <p>登陆github，新建仓库，仓库命名一定是你的昵称.github.io<br>接着在文件夹下安装一个git的部署插件<br>命令：cnpm install –save hexo-deployer-git<br>需要设置config.yml，使用vim打开<br><img src="https://img-blog.csdnimg.cn/20200309155014645.png" alt="在这里插入图片描述"></p>
 <p>然后就可以部署到远端，命令：hexo d<br><img src="https://img-blog.csdnimg.cn/20200309155356329.png" alt="在这里插入图片描述"></p>
-<p>然后就可以用浏览器访问昵称.github.io这个地址</p>
-<h2 id="问题总结"><a href="#问题总结" class="headerlink" title="问题总结"></a>问题总结</h2><p>最开始在安装cnpm的时候耽搁了一些时间，遇到以下错误：<br>ENOENT: no such file or directory, rename ‘/usr/local/lib/node_modules/.stag<br>当时不知道是网络的问题还是其他的，索性将nodejs干掉，重新使用命令行安装，导致一个问题安装的版本太低，报错：TypeError: this is not a typed array.<br>提升版本命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">curl -sL https:&#x2F;&#x2F;rpm.nodesource.com&#x2F;setup_8.x | bash -</span><br><span class="line"></span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
-<p><strong>初始化hexo及部署时 git 443报错</strong></p>
-<p>在github上添加SSH keys信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa  #一直enter</span><br><span class="line"></span><br><span class="line">cd .ssh&#x2F;</span><br><span class="line"></span><br><span class="line">cat id_rsa.pub   #具体公钥信息</span><br></pre></td></tr></table></figure>
-<p>在github上添加SSH keys信息<br><img src="https://img-blog.csdnimg.cn/20200309171815882.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NjA1OTA2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>测试链接github</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
-<p><strong>bolg部署后按照昵称.github.io打开页面显示404</strong><br><img src="https://img-blog.csdnimg.cn/20200309171832938.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NjA1OTA2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>出现这个错误是由于我的仓库名与昵称不相符<br><img src="https://img-blog.csdnimg.cn/2020030917185133.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NjA1OTA2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p><strong>参考文献</strong>：<a href="https://www.bilibili.com/video/av44544186" target="_blank" rel="noopener">https://www.bilibili.com/video/av44544186</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/09/%E4%B8%AA%E4%BA%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B+%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -269,12 +264,14 @@
 
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/03/09/hello-world/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
